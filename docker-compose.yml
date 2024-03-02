@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  db:
+    image : moonkh/moon:1.0
+    container_name: moonkh_DeepFake_0
+    volumes : 
+    - .:/workspace
+    - /raid/khmoon/dfdcs:/dfdcs
+    - /raid/khmoon/T7:/T7
+    shm_size: 20gb
+    command: tail -f /dev/null
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"]
+              capabilities: [gpu]
