@@ -1,6 +1,6 @@
 # SupCon-MPL : Super Contrastive Learning with Meta Pseudo Label (SupCon-MPL) for Deepfake Image Detection
 
-<src="./imgs/model.png>
+<src="./imgs/model.png">
 
 #### SupCon-MPL : Super Contrastive Learning with Meta Pseudo Label (SupCon-MPL) for Deepfake Image Detection
 <names>
