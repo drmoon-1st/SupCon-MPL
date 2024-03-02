@@ -1,6 +1,6 @@
 # SupCon-MPL : Super Contrastive Learning with Meta Pseudo Label (SupCon-MPL) for Deepfake Image Detection
 
-<image of supconmpl>
+<src="./imgs/model.png>
 
 #### SupCon-MPL : Super Contrastive Learning with Meta Pseudo Label (SupCon-MPL) for Deepfake Image Detection
 <names>
@@ -8,11 +8,12 @@
 <abstract>
 
 # Requirements
-<divider>
-<bullet>
-We recommend Linux for performance and compatibility reasons.
 
-Python libraries: see requirement.txt for exact library dependencies. You can use the following commands with docker after downloading datasets and placing them right folder to create your environment:
+-----
+
+- We recommend Linux for performance and compatibility reasons.
+
+- Python libraries: see requirement.txt for exact library dependencies. You can use the following commands with docker after downloading datasets and placing them right folder to create your environment:
 [
  docker-compose up -d
 ]
