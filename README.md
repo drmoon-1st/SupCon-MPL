@@ -126,6 +126,6 @@ After figuring out all the requirements, you can simply run `model_to_train.sh` 
 > Before training SupCon-MPL, make sure to train teacher model with `train_supcon_model.sh`.
 
 
-If you hope to only evaluate models, comment first line of `model_to_train.sh`.
+If you hope to only evaluate models, comment first line of `model_to_train.sh` and run `model_to_train.sh`.
 
 -----
