@@ -51,10 +51,12 @@ Dataset folders should be:
 │   ├── video_name1
 │   ├── video_name2
 │   └── ...
+│
 ├── DFDC_videos
 │   ├── video_name1
 │   ├── video_name2
 │   └── ...
+│
 ├── FaceForensics++
 │   ├── train_set
 │   │   ├── Deepfakes
@@ -71,19 +73,22 @@ Dataset folders should be:
 │       ├── FaceSwap
 │       ├── NeuralTextures
 │       └── Real
+│
 ├── StyleGAN
 │   ├── img1
 │   ├── img2
 │   └── ...
+│
 ├── CelebDF
 │   ├── youtube_real_imgs
-│   │   │   ├── img1
-│   │   │   ├── img2
-│   │   │   └── ...
-│   ├── fake_imgs
-│   │   │   ├── img1
-│   │   │   ├── img2
-│   │   │   └── ...
+│   │   ├── img1
+│   │   ├── img2
+│   │   └── ...
+│   └── fake_imgs
+│       ├── img1
+│       ├── img2
+│       └── ...
+│
 └── CelebA
     ├── img1
     ├── img2
