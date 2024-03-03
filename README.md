@@ -15,13 +15,21 @@ K.H. Moon, S.H. Lee
 
 - We recommend Linux for performance and compatibility reasons.
 
-- Python libraries: see `requirement.txt` for exact library dependencies. You can use the following commands with docker after downloading datasets and placing them right folder to create your environment: `docker-compose up -d` or `docker compose up -d`
+- Python libraries: see `requirement.txt` for exact library dependencies. You can use the following commands with docker after downloading datasets and placing them right folder to create your environment: `docker-compose up -d` or `docker compose up -d`(You can install docker following this [link](https://docs.docker.com/engine/install/ubuntu/))
 
 # Getting started
 
 - You can download the weights of `models` from [link](https://drive.google.com/drive/folders/1nToXe0Ll86GXBOVw0OsS-VB6XkTi7U08?usp=sharing) and put it under the `weights` dir.
 
 - Pre-trained networks are stored as `*.tar` files
+
+## Making folders
+
+You can make folders running commands below.
+```bash
+cd preprocess
+python make_folder.py
+```
 
 ## Datasets
 DFDC(part 0, 4, 10, 17, 35, 40) : https://ai.meta.com/datasets/dfdc/
@@ -118,7 +126,7 @@ cropped_data_path_dfdc = 'DFDC10_face_imgs_path'
 cropped_data_path_face = 'FaceForensics_face_imgs_path_test' 
 ```
 
-# Training and Evaluation
+## Training and Evaluation
 After figuring out all the requirements, you can simply run `train_[model_name]_model.sh` to train and evaluate models.
 
 **Runnlble commands** : 
