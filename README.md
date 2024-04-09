@@ -146,7 +146,7 @@ version: '3'
 services:
   db:
     image : moonkh/moon:1.0
-    container_name: moonkh_DeepFake_0
+    container_name: DeepFake
     volumes : 
     - .:/workspace
     - virtual_datapath:real_data_path # ex) /data:/my_com_data
@@ -160,6 +160,8 @@ services:
               device_ids: ["0"] # device ids
               capabilities: [gpu]
 ```
+
+After makeing docker container, you can use it with `docker exec -it Deepfake bash`. If you encounter error about `permission`, please use commands with `sudo` like `sudo docker exec -it Deepfake bash`.
 
 ## Training and Evaluation
 After figuring out all the requirements, you can simply run `train_[model_name]_model.sh` to train and evaluate models.
