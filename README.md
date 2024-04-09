@@ -4,7 +4,7 @@
 
 #### SupCon-MPL-DP: Supervised Contrastive Learning with Meta Pseudo Labels for Deepfake Image Detection
 
-Kyeong-Hwan Moon<sup>1</sup>, Soo-Yol Ok<sup>2</sup> and Suk-Hwan Lee<sup>3,*</sup>
+Kyeong-Hwan Moon<sup>1</sup>, Soo-Yol Ok<sup>2</sup> and Suk-Hwan Lee<sup>2,*</sup>
 
 [Github](https://github.com/drmoon-1st/SupCon-MPL.git) / 
 [Paper(Will be updated)]()
