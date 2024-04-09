@@ -6,14 +6,13 @@ services:
     container_name: moonkh_DeepFake_0
     volumes : 
     - .:/workspace
-    - /raid/khmoon/dfdcs:/dfdcs
-    - /raid/khmoon/T7:/T7
-    shm_size: 20gb
+    - virtual_datapath:real_data_path
+    shm_size: 20gb # you can change size depend on your resources.
     command: tail -f /dev/null
     deploy:
       resources:
         reservations:
           devices:
             - driver: nvidia
-              device_ids: ["0"]
+              device_ids: ["0"] # device id : 0, 1, ...
               capabilities: [gpu]
