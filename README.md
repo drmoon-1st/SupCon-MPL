@@ -9,7 +9,7 @@ Kyeong-Hwan Moon<sup>1</sup>, Soo-Yol Ok<sup>2</sup> and Suk-Hwan Lee<sup>3,*</s
 [Github](https://github.com/drmoon-1st/SupCon-MPL.git) / 
 [Paper]()
 
-**Abstract** : Recently, there has been considerable research on deepfake detection. However, most existing methods face challenges in adapting to the advancements in new generative models within un-known domains. In addition, the emergence of new generative models capable of producing and editing high-quality images, such as Diffusion, Consistency, and LCM, poses a challenge for tra-ditional deepfake training models. These advancements highlight the need for adapting and evolving existing deepfake detection techniques to effectively counter the threats posed by sophis-ticated image manipulation technologies. In this paper, our objective is to detect deepfake videos in unknown domains using unlabeled data. Specifically, our proposed approach employs Meta Pseudo Labels (MPL) with Supervised Contrastive Learning, so-called SupCon-MPL, allowing the model to be trained on unlabeled images. MPL involves the simultaneous training of both a teacher model and a student model, where the teacher model generates Pseudo Labels utilized to train the student model. This method aims to enhance the adaptability and robustness of deepfake detection systems against emerging unknown domains. Supervised Contrastive Learning utilizes labels to compare samples within similar classes more intensively, while encouraging greater distinction from samples in dissimilar classes. This facilitates the learning of features in a diverse set of deepfake images by the model, consequently contributing to the performance of deepfake detection in unknown domains. When utilizing the ResNet50 model as the backbone, Sup-Con-MPL exhibited an improvement of 1.58% in accuracy compared to traditional MPL in known domain detection. Moreover, in the same generation of unknown domain detection, there was a 1.32% accuracy enhancement, while in the detection of post-generation unknown domains, there was an 8.74% increase in accuracy.
+**Abstract** : Recently, there has been considerable research on deepfake detection. However, most existing methods face challenges in adapting to the advancements in new generative models within un-known domains. In addition, the emergence of new generative models capable of producing and editing high-quality images, such as diffusion, consistency, and LCM, poses a challenge for tradi-tional deepfake training models. These advancements highlight the need for adapting and evolving existing deepfake detection techniques to effectively counter the threats posed by sophisticated im-age manipulation technologies. In this paper, our objective is to detect deepfake videos in unknown domains using unlabeled data. Specifically, our proposed approach employs Meta Pseudo Labels (MPL) with supervised contrastive learning, so-called SupCon-MPL, allowing the model to be trained on unlabeled images. MPL involves the simultaneous training of both a teacher model and a student model, where the teacher model generates pseudo labels utilized to train the student model. This method aims to enhance the adaptability and robustness of deepfake detection systems against emerging unknown domains. Supervised contrastive learning utilizes labels to compare samples within similar classes more intensively, while encouraging greater distinction from samples in dissimilar classes. This facilitates the learning of features in a diverse set of deepfake images by the model, consequently contributing to the performance of deepfake detection in un-known domains. When utilizing the ResNet50 model as the backbone, SupCon-MPL exhibited an improvement of 1.58% in accuracy compared with traditional MPL in known domain detection. Moreover, in the same generation of unknown domain detection, there was a 1.32% accuracy en-hancement, while in the detection of post-generation unknown domains, there was an 8.74% in-crease in accuracy.
 
 # Results
 
@@ -135,6 +135,30 @@ cropped_data_path_dfdc = 'DFDC10_face_imgs_path'
 
 # cropped face dataset path(imgs) of FaceForensics
 cropped_data_path_face = 'FaceForensics_face_imgs_path_test' 
+```
+
+## Making Environment
+Before using command `docker compose up -d`, make sure to figure out all `docker-compose.yml` file. You can specify volumes of your dataset path, shm size and gpu ids.
+
+```bash
+version: '3'
+
+services:
+  db:
+    image : moonkh/moon:1.0
+    container_name: moonkh_DeepFake_0
+    volumes : 
+    - .:/workspace
+    - virtual_datapath:real_data_path # ex) /data:/my_com_data
+    shm_size: 20gb # you can change size depend on your resources.
+    command: tail -f /dev/null
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ["0"] # device ids
+              capabilities: [gpu]
 ```
 
 ## Training and Evaluation
